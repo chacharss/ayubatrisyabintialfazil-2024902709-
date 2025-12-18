@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Education</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <img src="education.png" alt="Banner">
+</div>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="education.html" class="active">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="work.html">Work</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="container">
+  <h1>Education Background</h1>
+
+  <div class="card">
+    <table>
+      <tr>
+        <th>Year</th>
+        <th>Institution</th>
+        <th>Programme</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>2023 – Present</td>
+        <td>Universiti Teknologi MARA (UiTM), Kedah</td>
+        <td>Diploma in Library Informatics</td>
+        <td><a href="#" class="link-text" onclick="openPopup('uitm')">CGPA: 3.21</a></td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td>Universiti Teknologi MARA (UiTM), Jengka</td>
+        <td>Pre-Diploma in Commerce</td>
+        <td><a href="#" class="link-text" onclick="openPopup('predip')">Pass</a></td>
+      </tr>
+      <tr>
+        <td>2018 – 2022</td>
+        <td>Sekolah Menengah Kebangsaan Putra Perdana</td>
+        <td>SPM</td>
+        <td><a href="#" class="link-text" onclick="openPopup('spm')">View Result</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- POPUP -->
+<div id="popup-bg" onclick="closePopup()"></div>
+<div id="popup-box">
+  <span class="close-btn" onclick="closePopup()">×</span>
+  <div id="popup-content"></div>
+</div>
+
+<script>
+function openPopup(type) {
+  let content = "";
+  switch(type) {
+    case "uitm":
+      content = `
+        <h2>UiTM Kedah – Academic Result</h2>
+        <ul>
+          <li>Current CGPA: <b>3.21</b></li>
+          <li>Dean’s List: Semester 3</li>
+          <li>Major Courses:
+            <ul>
+              <li>Cataloguing</li>
+              <li>Information Organization</li>
+              <li>Library Systems</li>
+            </ul>
+          </li>
+        </ul>`;
+      break;
+
+    case "predip":
+      content = `
+        <h2>UiTM Jengka – Pre-Diploma</h2>
+        <ul>
+          <li>Status: <b>Passed with CGPA 3.38</b></li>
+          <li>Main Subjects:
+            <ul>
+              <li>Business Mathematics</li>
+              <li>Introduction to Commerce</li>
+              <li>Communication Skills</li>
+            </ul>
+          </li>
+        </ul>`;
+      break;
+
+    case "spm":
+      content = `
+        <h2>SPM Result</h2>
+        <ul>
+          <li>BM: B+</li>
+          <li>English: B+</li>
+          <li>Mathematics: C+</li>
+          <li>History: C+</li>
+          <li>Science: B</li>
+          <li>Literature: C+</li>
+          <li>Geography: C+</li>
+          <li>Pendidikan Islam: B+</li>
+        </ul>`;
+      break;
+  }
+
+  document.getElementById("popup-content").innerHTML = content;
+  document.getElementById("popup-bg").style.display = "flex";
+  document.getElementById("popup-box").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup-bg").style.display = "none";
+  document.getElementById("popup-box").style.display = "none";
+}
+</script>
+
+<div class="footer">
+  Copyright © Ayu Batrisya | Last Updated: November 2025
+</div>
+
+</body>
+</html>

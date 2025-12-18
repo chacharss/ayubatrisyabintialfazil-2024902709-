@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About Me</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+</head>
+
+<body>
+
+<div class="header">
+  <img src="about.png" alt="Banner">
+</div>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About Me</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="work.html">Work</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="container">
+
+  <h1>About Me</h1>
+
+<button class="btn-liquid" onclick="typeWriter()">Quotes</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = '“Becoming a better version of myself, one step at a time.”';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+
+  <div class="card">
+    <img src="pink.jfif" width="160" style="float:left;margin-right:20px;border-radius:10px;">
+
+    <p>Hello! My name is <b>Ayu Batrisya binti Alfazil</b>.</p>
+    <p>I am a motivated SPM school-leaver with strong academic performance in Bahasa Melayu and English. 
+       I am currently pursuing a <b>Diploma in Science Management</b>.</p>
+    <p>I am <b>independent, well-organised, responsible,</b> and equipped with strong interpersonal skills.</p>
+    <p>I enjoy learning new things and I am committed to personal and professional growth.
+       I am ready to take on tasks and responsibilities as a dedicated, reliable individual.</p>
+
+    <div style="clear:both;"></div>
+  </div>
+
+  <div class="card">
+    <h2>Personal Information</h2>
+    <ul>
+      <li><b>Full Name:</b> Ayu Batrisya binti Alfazil</li>
+      <li><b>Date of Birth:</b> 27 october 2005</li>
+      <li><b>Gender:</b> Female</li>
+      <li><b>Status:</b> Diploma Student</li>
+    </ul>
+  </div>
+
+
+  <div class="card">
+    <h2>Career Objective</h2>
+    <p>To gain practical experience, develop communication and management skills, and grow into a confident,
+       responsible professional who contributes effectively in future workplace environments.</p>
+  </div>
+
+
+  <div class="card">
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li> Watching movies</li>
+      <li> Listening to Music</li>
+      <li> Reading</li>
+      <li> Photography</li>
+      <li> Aesthetic Content Creation</li>
+    </ul>
+  </div>
+
+
+<div class="card">
+  <h2>Language Proficiency</h2>
+
+  <button onclick="showLang()" class="btn-show">Show My Language Proficiency</button>
+
+  <div id="langBox" style="display:none; margin-top:15px;">
+
+    <p>Bahasa Melayu</p>
+    <div class="skill-container">
+      <div class="skills bm" data-width="100%">0%</div>
+    </div>
+
+    <p>English</p>
+    <div class="skill-container">
+      <div class="skills eng" data-width="60%">0%</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function animateSkills() {
+  const bars = document.querySelectorAll(".skills");
+  bars.forEach(bar => {
+    const finalWidth = bar.getAttribute("data-width");
+    bar.style.width = finalWidth;
+    bar.textContent = finalWidth;
+  });
+}
+
+function resetSkills() {
+  const bars = document.querySelectorAll(".skills");
+  bars.forEach(bar => {
+    bar.style.width = "0%";
+    bar.textContent = "0%";
+  });
+}
+
+function showLang() {
+  var box = document.getElementById("langBox");
+
+  if (box.style.display === "none") {
+    box.style.display = "block";
+    resetSkills();       // reset to 0%
+    setTimeout(animateSkills, 200); // animate after showing
+  } else {
+    box.style.display = "none";
+    resetSkills();
+  }
+}
+</script>
+
+
+
+</div>
+
+<div class="footer">
+  Copyright © Ayu Batrisya |
+  Last Updated: November 2025
+</div>
+
+</body>
+</html>

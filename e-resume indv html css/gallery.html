@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <img src="gallery.png" alt="Banner">
+</div>
+
+<!-- NAVIGATION bar stays same -->
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="work.html">Work</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="container">
+  <h1>Gallery</h1>
+
+  <div class="gallery-grid">
+    <a href="predip.jfif" target="_blank" data-caption="Pre-diploma theatre">
+      <img src="predip.jfif" alt="Pre-diploma theatre">
+    </a>
+
+    <a href="Certificate.jfif" target="_blank" data-caption="Certificate">
+      <img src="Certificate.jfif" alt="Certificate">
+    </a>
+
+    <a href="kerja.jfif" target="_blank" data-caption="Workshop">
+      <img src="kerja.jfif" alt="Workshop">
+    </a>
+  </div>
+
+  <br>
+
+  <h2>Public Speaking presentation</h2>
+  <video width="320" controls>
+    <source src="speaking.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <br><br>
+
+  <!-- Single aesthetic audio player -->
+  <div class="audio-player">
+    <h3>Zayn - Track</h3>
+    <div class="controls">
+      <button class="play-btn" id="play-btn">▶️</button>
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="time" id="current-time">0:00</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Copyright © Ayu Batrisya | Last Updated: November 2025
+</div>
+
+<script>
+// Single audio logic
+const audio = new Audio('zayn.mp3'); 
+const playBtn = document.getElementById('play-btn');
+const progressContainer = document.getElementById('progress-container');
+const progress = document.getElementById('progress');
+const currentTimeEl = document.getElementById('current-time');
+let isPlaying = false;
+
+// Play/Pause
+playBtn.addEventListener('click', () => {
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+});
+
+audio.addEventListener('play', () => {
+  isPlaying = true;
+  playBtn.textContent = '⏸️';
+});
+
+audio.addEventListener('pause', () => {
+  isPlaying = false;
+  playBtn.textContent = '▶️';
+});
+
+// Update progress
+audio.addEventListener('timeupdate', () => {
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progress.style.width = percent + '%';
+  let minutes = Math.floor(audio.currentTime / 60);
+  let seconds = Math.floor(audio.currentTime % 60);
+  if(seconds < 10) seconds = '0' + seconds;
+  currentTimeEl.textContent = `${minutes}:${seconds}`;
+});
+
+// Click to seek
+progressContainer.addEventListener('click', (e) => {
+  const width = progressContainer.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+  audio.currentTime = (clickX / width) * duration;
+});
+</script>
+
+</body>
+</html>

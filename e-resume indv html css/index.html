@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home - My E-Resume</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="resume.png" alt="Banner">
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="work.html">Work</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <h1>Welcome to My E-Resume</h1>
+  <p>This website contains my personal information, education background,
+     skills, working experience, and memorable moments of my life.</p>
+
+  <div class="card home-profile">
+    <img src="gambar-resume.jpg" width="115" style="float:left;margin-right:15px;">
+    <h2>Hello, I'm Ayu Batrisya!</h2>
+    <p>A Diploma in Library Management student who enjoys creativity, design,
+       and connecting with people. This e-resume represents my journey,
+       skills and achievements as a student.</p>
+  </div>
+
+<button class="btn-liquid" onclick="typeWriter()">Quotes</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = '“You were hired because you met expectations. You will be promoted if you exceed them.”';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+
+  <div class="quick-info">
+    <h2>At a Glance</h2>
+    <ul>
+      <li>Diploma in Library Management</li>
+      <li>Selangor, Malaysia</li>
+      <li>ayubatrisya0040@gmail.com</li>
+    </ul>
+  </div>
+
+  <div class="button-box">
+    <a href="Resume.pdf" class="btn">Download Resume</a>
+    <br>
+    <a href="contact.html" class="btn">Hire Me</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  Copyright © Ayu Batrisya | Last Updated: November 2025
+</div>
+
+</body>
+</html>

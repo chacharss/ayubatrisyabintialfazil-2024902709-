@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Skills</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="header">
+  <img src="skills.png" alt="Banner">
+</div>
+
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html" class="active">Skills</a>
+  <a href="work.html">Work</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+
+<div class="container">
+  <h1>Skills & Abilities</h1>
+  <p>These are some of the skills I have developed through studies and experiences, helping me work efficiently, creatively, and professionally.</p>
+
+ 
+  <div class="card">
+    <h2>Soft Skills</h2>
+    <div class="home-cards">
+      <div class="mini-card"> Communication</div>
+      <div class="mini-card">Teamwork</div>
+      <div class="mini-card">Problem Solving</div>
+      <div class="mini-card">Creativity</div>
+      <div class="mini-card">Time Management</div>
+    </div>
+  </div>
+
+<div class="card">
+  <h2>Technical Skills</h2>
+
+  <button onclick="showTech()" class="btn-show">Show Technical Skills</button>
+
+  <div id="techBox" style="display:none; margin-top:15px;">
+
+    <p>Microsoft Word</p>
+    <div class="skill-container">
+      <div class="skills word" data-width="100%">0%</div>
+    </div>
+
+    <p>Microsoft PowerPoint</p>
+    <div class="skill-container">
+      <div class="skills ppt" data-width="100%">0%</div>
+    </div>
+
+    <p>Microsoft Excel</p>
+    <div class="skill-container">
+      <div class="skills excel" data-width="80%">0%</div>
+    </div>
+
+    <p>Basic HTML & CSS</p>
+    <div class="skill-container">
+      <div class="skills htmlcss" data-width="60%">0%</div>
+    </div>
+
+    <p>Canva Editing</p>
+    <div class="skill-container">
+      <div class="skills canva" data-width="80%">0%</div>
+    </div>
+
+    <p>Library Cataloging (RDA, MARC21, DDC)</p>
+    <div class="skill-container">
+      <div class="skills cataloging" data-width="80%">0%</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function animateTech() {
+  const bars = document.querySelectorAll("#techBox .skills");
+  bars.forEach(bar => {
+    const finalWidth = bar.getAttribute("data-width");
+    bar.style.width = finalWidth;
+    bar.textContent = finalWidth;
+  });
+}
+
+function resetTech() {
+  const bars = document.querySelectorAll("#techBox .skills");
+  bars.forEach(bar => {
+    bar.style.width = "0%";
+    bar.textContent = "0%";
+  });
+}
+
+function showTech() {
+  var box = document.getElementById("techBox");
+
+  if (box.style.display === "none") {
+    box.style.display = "block";
+    resetTech();
+    setTimeout(animateTech, 200);
+  } else {
+    box.style.display = "none";
+    resetTech();
+  }
+}
+</script>
+
+
+</div>
+
+<div class="footer">
+  Copyright © Ayu Batrisya |
+  Last Updated: November 2025
+</div>
+
+
+
+</body>
+</html>
